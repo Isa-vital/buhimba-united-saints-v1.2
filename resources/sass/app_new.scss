@@ -1,0 +1,371 @@
+/* Import Bootstrap and Variables */
+
+@import 'bootstrap';
+
+/* Club Variables */
+
+:root {
+    --club-primary: #1b5e20;
+    --club-secondary: #2e7d32;
+    --club-accent: #ffd700;
+    --club-white: #ffffff;
+    --club-light-gray: #f8f9fa;
+    --club-dark-gray: #343a40;
+}
+
+
+/* Global Styles */
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--club-dark-gray);
+}
+
+
+/* Hero Banner Styles */
+
+.hero-banner {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.club-name-gradient {
+    background: linear-gradient(135deg, var(--club-accent), #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text-white-75 {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+
+/* Button Styles */
+
+.btn-primary {
+    background-color: var(--club-primary);
+    border-color: var(--club-primary);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--club-secondary);
+    border-color: var(--club-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(27, 94, 32, 0.3);
+}
+
+.btn-outline-light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+
+/* Card Styles */
+
+.card {
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    border-radius: 15px 15px 0 0 !important;
+    font-weight: 600;
+}
+
+
+/* News Card Styles */
+
+.news-card {
+    overflow: hidden;
+}
+
+.news-card .card-img-top {
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.placeholder-img {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+
+/* Player Card Styles */
+
+.player-card {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.player-card:hover {
+    border-color: var(--club-primary);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(27, 94, 32, 0.15);
+}
+
+.player-placeholder {
+    background: linear-gradient(135deg, var(--club-primary), var(--club-secondary));
+}
+
+
+/* Carousel Styles */
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    color: var(--club-primary);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: var(--club-primary);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.carousel-indicators button {
+    background-color: var(--club-primary);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+
+/* Sponsor Styles */
+
+.sponsor-logo {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.sponsor-item:hover .sponsor-logo,
+.sponsor-item:hover .sponsor-placeholder {
+    filter: grayscale(0%) !important;
+    transform: scale(1.1);
+}
+
+
+/* Fan Engagement Section */
+
+.fan-engagement-section {
+    background: linear-gradient(135deg, var(--club-primary), var(--club-secondary));
+}
+
+.btn-warning {
+    background-color: var(--club-accent);
+    border-color: var(--club-accent);
+    color: var(--club-dark-gray);
+    font-weight: 600;
+}
+
+.btn-warning:hover {
+    background-color: #ffed4e;
+    border-color: #ffed4e;
+    color: var(--club-dark-gray);
+    transform: translateY(-2px);
+}
+
+.text-white-50 {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+
+/* Social Media Icons */
+
+.social-icons .btn {
+    transition: all 0.3s ease;
+    border-width: 2px;
+}
+
+.social-icons .btn:hover {
+    background-color: var(--club-accent);
+    border-color: var(--club-accent);
+    color: var(--club-dark-gray);
+    transform: translateY(-3px);
+}
+
+
+/* Match Section Styles */
+
+.matches-section {
+    background-color: var(--club-light-gray);
+}
+
+.vs-section .badge {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+}
+
+.score-section h2 {
+    font-size: 2.5rem;
+}
+
+.opponent-logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
+/* Section Headers */
+
+.display-4 {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.text-primary {
+    color: var(--club-primary) !important;
+}
+
+
+/* Background Sections */
+
+.bg-light {
+    background-color: var(--club-light-gray) !important;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .hero-banner {
+        min-height: 80vh;
+    }
+    .display-1 {
+        font-size: 2.5rem;
+    }
+    .hero-cta .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .match-teams .row {
+        text-align: center;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none;
+    }
+    .social-icons .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .player-card .card-body {
+        padding: 2rem 1rem;
+    }
+    .sponsor-item {
+        margin-bottom: 1rem;
+    }
+    .newsletter-section .row {
+        flex-direction: column;
+    }
+    .newsletter-section .col-8,
+    .newsletter-section .col-4 {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+
+/* Animation Classes */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+
+/* Loading States */
+
+.btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+
+/* Utility Classes */
+
+.bg-gradient {
+    background: linear-gradient(135deg, var(--club-primary), var(--club-secondary));
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--club-primary), var(--club-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+/* Form Styles */
+
+.form-control:focus {
+    border-color: var(--club-primary);
+    box-shadow: 0 0 0 0.2rem rgba(27, 94, 32, 0.25);
+}
+
+
+/* Custom Scrollbar */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--club-light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--club-primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--club-secondary);
+}

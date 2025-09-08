@@ -1,0 +1,1362 @@
+/* Import Bootstrap and Variables */
+
+@import 'bootstrap';
+// Club Colors
+:root {
+    --club-primary: #1b5e20;
+    --club-secondary: #ffeb3b;
+    --club-accent: #ff5722;
+    --club-dark: #0d2818;
+    --club-light: #f8f9fa;
+}
+
+// Professional Hero Section Styles
+.hero-section {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-background {
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-image {
+    transition: transform 0.5s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.02);
+}
+
+// Club Identity
+.club-logo {
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
+}
+
+.club-logo:hover {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.5));
+}
+
+.club-name {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    animation: glow 3s ease-in-out infinite alternate;
+    color: #f8f9fa !important;
+}
+
+.club-subtitle {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    color: #ffd700 !important;
+}
+
+.club-tagline {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    opacity: 0.95;
+    color: #f8f9fa !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.4);
+    }
+    to {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.7);
+    }
+}
+
+// Info Cards
+.info-card {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 1);
+}
+
+.info-card .card-header {
+    background: linear-gradient(135deg, rgba(27, 94, 32, 0.1), rgba(255, 235, 59, 0.1));
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 15px 15px 0 0;
+}
+
+.info-card .card-body {
+    padding: 1.5rem;
+    color: #212529;
+}
+
+.info-card .text-muted {
+    color: #6c757d !important;
+}
+
+.info-card .fw-bold {
+    color: #212529 !important;
+}
+
+.match-teams {
+    .team {
+        transition: transform 0.3s ease;
+    }
+    .team:hover {
+        transform: scale(1.05);
+    }
+}
+
+.vs-badge {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.score-display {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--bs-primary);
+    animation: scoreGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes scoreGlow {
+    from {
+        text-shadow: 0 0 5px rgba(var(--bs-primary-rgb), 0.5);
+    }
+    to {
+        text-shadow: 0 0 15px rgba(var(--bs-primary-rgb), 0.8);
+    }
+}
+
+.score-separator {
+    margin: 0 0.5rem;
+    color: var(--bs-secondary);
+}
+
+// Stats Panel
+.stats-panel {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(27, 94, 32, 0.2));
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stats-title {
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--bs-warning), var(--bs-primary));
+        border-radius: 2px;
+    }
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(15px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.stat-icon {
+    font-size: 2.2rem;
+    margin-right: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover .stat-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #f8f9fa !important;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.stat-label {
+    color: #e9ecef !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+// CTA Buttons
+.cta-button {
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary.cta-button:hover {
+    background: linear-gradient(135deg, var(--bs-primary), var(--club-dark));
+    border-color: var(--bs-warning);
+}
+
+.btn-warning.cta-button:hover {
+    background: linear-gradient(135deg, var(--bs-warning), #ffc107);
+    transform: translateY(-5px) scale(1.05);
+}
+
+.btn-outline-light.cta-button:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--bs-dark);
+    border-color: var(--bs-warning);
+}
+
+// Scroll Indicator
+.scroll-indicator {
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    z-index: 10;
+}
+
+.scroll-arrow {
+    background: rgba(248, 249, 250, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 215, 0, 0.5);
+}
+
+.scroll-indicator:hover .scroll-arrow {
+    background: rgba(255, 215, 0, 0.9);
+    transform: scale(1.1);
+    border-color: rgba(27, 94, 32, 0.8);
+}
+
+.scroll-arrow i {
+    color: #212529 !important;
+    font-size: 1.2rem;
+    text-shadow: none !important;
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-15px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-8px) translateX(-50%);
+    }
+}
+
+// Sponsors Carousel
+.sponsors-carousel-section {
+    border-top: 3px solid var(--bs-light);
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+.sponsors-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.sponsors-slider {
+    overflow: hidden;
+    white-space: nowrap;
+    mask: linear-gradient(90deg, transparent, black 20%, black 80%, transparent);
+}
+
+.sponsors-track {
+    display: inline-flex;
+    animation: scroll 40s linear infinite;
+    align-items: center;
+}
+
+.sponsor-slide {
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    margin: 0 1.5rem;
+}
+
+.sponsor-logo {
+    transition: all 0.3s ease;
+    max-height: 60px !important;
+    max-width: 120px;
+    object-fit: contain;
+}
+
+.sponsor-logo:hover {
+    filter: grayscale(0%) !important;
+    opacity: 1 !important;
+    transform: scale(1.15);
+}
+
+.sponsor-placeholder {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border: 2px dashed #dee2e6;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    min-width: 120px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.sponsor-placeholder:hover {
+    background: linear-gradient(135deg, #e9ecef, #dee2e6);
+    border-color: var(--bs-primary);
+    transform: scale(1.05);
+}
+
+.sponsor-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6c757d;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+// Pattern Animation
+@keyframes patternFloat {
+    0%,
+    100% {
+        background-position: 0 0, 0 0;
+        opacity: 0.6;
+    }
+    50% {
+        background-position: 30px 30px, -30px -30px;
+        opacity: 0.8;
+    }
+}
+
+.hero-pattern {
+    animation: patternFloat 25s ease-in-out infinite;
+}
+
+// News Cards
+.news-card {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.news-card .card-img-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.news-card .card-img-top {
+    transition: transform 0.5s ease;
+}
+
+.news-card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.news-overlay {
+    transition: opacity 0.3s ease;
+}
+
+.news-card:hover .news-overlay {
+    opacity: 0.9;
+}
+
+.placeholder-img {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    transition: all 0.3s ease;
+}
+
+.news-card:hover .placeholder-img {
+    background: linear-gradient(135deg, #e9ecef, #dee2e6);
+}
+
+// Player Cards
+.player-card {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.player-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.player-image img,
+.player-placeholder {
+    transition: all 0.3s ease;
+}
+
+.player-card:hover .player-image img {
+    transform: scale(1.1);
+}
+
+.player-card:hover .player-placeholder {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, var(--bs-primary), var(--club-dark));
+}
+
+.player-stats .stat-item {
+    background: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.player-stats .stat-item h6 {
+    transition: all 0.3s ease;
+}
+
+.player-card:hover .player-stats .stat-item h6 {
+    transform: scale(1.1);
+}
+
+// Fan Engagement Section
+.fan-engagement-section {
+    background: linear-gradient(135deg, var(--bs-primary), var(--club-dark));
+    position: relative;
+    overflow: hidden;
+}
+
+.fan-engagement-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    animation: patternFloat 20s ease-in-out infinite;
+}
+
+.newsletter-section,
+.social-media-section {
+    position: relative;
+    z-index: 2;
+}
+
+.social-icons a {
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-icons a:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--bs-primary) !important;
+    transform: translateY(-5px) scale(1.05);
+    border-color: var(--bs-warning);
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+    .club-name {
+        font-size: 1.8rem;
+        color: #f8f9fa !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    }
+    .club-subtitle {
+        font-size: 1.5rem;
+        color: #ffd700 !important;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+    }
+    .hero-content {
+        padding: 2rem 1rem;
+    }
+    .stats-panel {
+        margin-top: 2rem;
+        padding: 1.5rem !important;
+        background: rgba(0, 0, 0, 0.7) !important;
+    }
+    .match-info-cards .col-md-6 {
+        margin-bottom: 1rem;
+    }
+    .info-card {
+        margin-bottom: 1rem;
+        background: rgba(255, 255, 255, 0.98) !important;
+    }
+    .stat-item {
+        padding: 1rem;
+    }
+    .stat-number {
+        font-size: 1.8rem;
+        color: #f8f9fa !important;
+    }
+    .stat-icon {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-cta-section .btn {
+        margin-bottom: 0.8rem;
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem;
+    }
+    .stat-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    .stat-icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    .club-name {
+        font-size: 1.5rem;
+        color: #f8f9fa !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    }
+    .club-subtitle {
+        font-size: 1.2rem;
+        color: #ffd700 !important;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+    }
+    .info-card .card-body {
+        padding: 1rem;
+    }
+    .sponsors-track {
+        animation-duration: 20s;
+    }
+}
+
+// Additional Utility Classes
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, var(--bs-primary), var(--club-dark));
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+// Focus states for accessibility
+.cta-button:focus,
+.info-card:focus-within,
+.stat-item:focus-within {
+    outline: 2px solid var(--bs-warning);
+    outline-offset: 2px;
+}
+
+// Print styles
+@media print {
+    .hero-section,
+    .sponsors-carousel-section,
+    .fan-engagement-section {
+        display: none;
+    }
+}
+
+
+/* Club Variables */
+
+:root {
+    --club-primary: #1b5e20;
+    --club-secondary: #2e7d32;
+    --club-accent: #ffd700;
+    --club-white: #ffffff;
+    --club-light-gray: #f8f9fa;
+    --club-dark-gray: #343a40;
+}
+
+
+/* Global Styles */
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--club-dark-gray);
+}
+
+
+/* Hero Banner Styles */
+
+.hero-banner {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.club-name-gradient {
+    background: linear-gradient(135deg, var(--club-accent), #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text-white-75 {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+
+/* Hero Banner Enhanced Styles */
+
+.hero-banner {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+
+/* Animated Background */
+
+@keyframes backgroundSlide {
+    0%,
+    100% {
+        background-position: center, 0 0, 0 0, 40px 40px;
+    }
+    50% {
+        background-position: center, -40px -40px, -40px -40px, 0 0;
+    }
+}
+
+
+/* Particles Animation */
+
+.hero-particles {
+    z-index: 2;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 215, 0, 0.6);
+    border-radius: 50%;
+    animation: particleFloat 6s infinite ease-in-out;
+}
+
+.particle:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+    top: 60%;
+    left: 80%;
+    animation-delay: 2s;
+}
+
+.particle:nth-child(3) {
+    top: 80%;
+    left: 30%;
+    animation-delay: 4s;
+}
+
+.particle:nth-child(4) {
+    top: 30%;
+    left: 70%;
+    animation-delay: 1s;
+}
+
+.particle:nth-child(5) {
+    top: 50%;
+    left: 50%;
+    animation-delay: 3s;
+}
+
+@keyframes particleFloat {
+    0%,
+    100% {
+        transform: translateY(0px) scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-20px) scale(1.2);
+        opacity: 1;
+    }
+}
+
+
+/* Floating Soccer Balls */
+
+.floating-elements {
+    z-index: 2;
+    pointer-events: none;
+}
+
+.floating-ball {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.3;
+    animation: floatBall 8s infinite ease-in-out;
+}
+
+.ball-1 {
+    top: 15%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.ball-2 {
+    top: 70%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+.ball-3 {
+    bottom: 30%;
+    left: 15%;
+    animation-delay: 6s;
+}
+
+@keyframes floatBall {
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-30px) rotate(90deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(180deg);
+    }
+    75% {
+        transform: translateY(-25px) rotate(270deg);
+    }
+}
+
+
+/* Logo Animation */
+
+.logo-animated {
+    animation: logoGlow 3s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+    0%,
+    100% {
+        filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
+    }
+    50% {
+        filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.8));
+    }
+}
+
+.badge-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.6;
+    }
+}
+
+
+/* Text Animations */
+
+.club-name-animated {
+    animation: titleSlideIn 1s ease-out;
+}
+
+.text-primary-glow {
+    color: var(--club-primary);
+    text-shadow: 0 0 20px rgba(27, 94, 32, 0.5);
+    animation: textGlow 3s ease-in-out infinite;
+}
+
+.text-white-glow {
+    color: white;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    animation: textGlow 3s ease-in-out infinite 1s;
+}
+
+.text-gold-glow {
+    color: var(--club-accent);
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    animation: textGlow 3s ease-in-out infinite 2s;
+}
+
+@keyframes titleSlideIn {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes textGlow {
+    0%,
+    100% {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+    }
+}
+
+
+/* Title Underline */
+
+.title-underline {
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--club-primary), var(--club-accent), var(--club-primary));
+    margin: 0 auto;
+    border-radius: 2px;
+    animation: underlineExpand 2s ease-out;
+}
+
+@keyframes underlineExpand {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 200px;
+    }
+}
+
+
+/* Typing Effect */
+
+.typing-text {
+    border-right: 2px solid var(--club-accent);
+    animation: typing 4s steps(20) infinite, blink 1s infinite;
+}
+
+@keyframes typing {
+    0%,
+    50% {
+        width: 0;
+    }
+    80%,
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    0%,
+    50% {
+        border-color: var(--club-accent);
+    }
+    51%,
+    100% {
+        border-color: transparent;
+    }
+}
+
+
+/* Stats Counter */
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0;
+}
+
+.stat-item {
+    padding: 1rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+
+/* Enhanced Buttons */
+
+.btn-animated {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-animated:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+}
+
+.btn-animated:hover .btn-ripple {
+    width: 200px;
+    height: 200px;
+}
+
+
+/* Social Icons */
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background: var(--club-accent);
+    color: var(--club-dark-gray);
+    transform: translateY(-5px) scale(1.1);
+}
+
+
+/* Button Styles */
+
+.btn-primary {
+    background-color: var(--club-primary);
+    border-color: var(--club-primary);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--club-secondary);
+    border-color: var(--club-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(27, 94, 32, 0.3);
+}
+
+.btn-outline-light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+
+/* Card Styles */
+
+.card {
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    border-radius: 15px 15px 0 0 !important;
+    font-weight: 600;
+}
+
+
+/* News Card Styles */
+
+.news-card {
+    overflow: hidden;
+}
+
+.news-card .card-img-top {
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.placeholder-img {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+
+/* Player Card Styles */
+
+.player-card {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.player-card:hover {
+    border-color: var(--club-primary);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(27, 94, 32, 0.15);
+}
+
+.player-placeholder {
+    background: linear-gradient(135deg, var(--club-primary), var(--club-secondary));
+}
+
+
+/* Carousel Styles */
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    color: var(--club-primary);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: var(--club-primary);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.carousel-indicators button {
+    background-color: var(--club-primary);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+
+/* Sponsor Styles */
+
+.sponsor-logo {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.sponsor-item:hover .sponsor-logo,
+.sponsor-item:hover .sponsor-placeholder {
+    filter: grayscale(0%) !important;
+    transform: scale(1.1);
+}
+
+
+/* Fan Engagement Section */
+
+.fan-engagement-section {
+    background: linear-gradient(135deg, var(--club-primary), var(--club-secondary));
+}
+
+.btn-warning {
+    background-color: var(--club-accent);
+    border-color: var(--club-accent);
+    color: var(--club-dark-gray);
+    font-weight: 600;
+}
+
+.btn-warning:hover {
+    background-color: #ffed4e;
+    border-color: #ffed4e;
+    color: var(--club-dark-gray);
+    transform: translateY(-2px);
+}
+
+.text-white-50 {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+
+/* Social Media Icons */
+
+.social-icons .btn {
+    transition: all 0.3s ease;
+    border-width: 2px;
+}
+
+.social-icons .btn:hover {
+    background-color: var(--club-accent);
+    border-color: var(--club-accent);
+    color: var(--club-dark-gray);
+    transform: translateY(-3px);
+}
+
+
+/* Match Section Styles */
+
+.matches-section {
+    background-color: var(--club-light-gray);
+}
+
+.vs-section .badge {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+}
+
+.score-section h2 {
+    font-size: 2.5rem;
+}
+
+.opponent-logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
+/* Section Headers */
+
+.display-4 {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.text-primary {
+    color: var(--club-primary) !important;
+}
+
+
+/* Background Sections */
+
+.bg-light {
+    background-color: var(--club-light-gray) !important;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .hero-banner {
+        min-height: 80vh;
+    }
+    .display-1 {
+        font-size: 2.5rem;
+    }
+    .hero-cta .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .match-teams .row {
+        text-align: center;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none;
+    }
+    .social-icons .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .player-card .card-body {
+        padding: 2rem 1rem;
+    }
+    .sponsor-item {
+        margin-bottom: 1rem;
+    }
+    .newsletter-section .row {
+        flex-direction: column;
+    }
+    .newsletter-section .col-8,
+    .newsletter-section .col-4 {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+
+/* Animation Classes */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+
+/* Loading States */
+
+.btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+
+/* Utility Classes */
+
+.bg-gradient {
+    background: linear-gradient(135deg, var(--club-primary), var(--club-secondary));
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--club-primary), var(--club-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+/* Form Styles */
+
+.form-control:focus {
+    border-color: var(--club-primary);
+    box-shadow: 0 0 0 0.2rem rgba(27, 94, 32, 0.25);
+}
+
+
+/* Custom Scrollbar */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--club-light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--club-primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--club-secondary);
+}
