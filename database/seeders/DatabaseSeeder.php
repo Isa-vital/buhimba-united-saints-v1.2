@@ -34,6 +34,8 @@ class DatabaseSeeder extends Seeder
             StaffSeeder::class,
             SponsorSeeder::class,
             NewsSeeder::class,
+            MatchResultSeeder::class,
+            FixtureSeeder::class,
         ]);
     }
 }

@@ -347,6 +347,11 @@
                                 <i class="bi bi-building me-2"></i>Sponsors
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('admin.merchandise.*') ? 'active' : '' }}" href="{{ route('admin.merchandise.index') }}">
+                                <i class="bi bi-shop me-2"></i>Merchandise
+                            </a>
+                        </li>
                         
                         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
                             <span>System</span>

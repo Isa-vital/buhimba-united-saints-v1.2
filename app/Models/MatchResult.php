@@ -71,6 +71,27 @@ class MatchResult extends Model
         return $this->is_home ? $this->away_score : $this->home_score;
     }
 
+    // Accessors for view compatibility
+    public function getHomeTeamAttribute()
+    {
+        return $this->is_home ? 'Buhimba United Saints FC' : $this->opponent;
+    }
+
+    public function getAwayTeamAttribute()
+    {
+        return $this->is_home ? $this->opponent : 'Buhimba United Saints FC';
+    }
+
+    public function getHomeGoalsAttribute()
+    {
+        return $this->home_score;
+    }
+
+    public function getAwayGoalsAttribute()
+    {
+        return $this->away_score;
+    }
+
     // Scopes
     public function scopeLatest($query, $limit = 5)
     {

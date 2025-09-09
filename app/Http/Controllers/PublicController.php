@@ -10,6 +10,7 @@ use App\Models\News;
 use App\Models\Sponsor;
 use App\Models\LeagueTable;
 use App\Models\NewsletterSubscriber;
+use App\Models\Merchandise;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -29,6 +30,7 @@ class PublicController extends Controller
 
         // Get featured news (latest 3)
         $featuredNews = News::where('is_published', true)
+            ->with('author')
             ->orderBy('published_at', 'desc')
             ->limit(3)
             ->get();
@@ -58,6 +60,13 @@ class PublicController extends Controller
         $totalMatches = Fixture::count();
         $totalTrophies = 15; // This could come from a trophies table
 
+        // Get merchandise for display
+        try {
+            $merchandise = Merchandise::active()->get();
+        } catch (\Exception $e) {
+            $merchandise = collect(); // Empty collection if table doesn't exist
+        }
+
         return view($view, compact(
             'nextFixture',
             'latestResult',
@@ -68,7 +77,8 @@ class PublicController extends Controller
             'totalPlayers',
             'totalStaff',
             'totalMatches',
-            'totalTrophies'
+            'totalTrophies',
+            'merchandise'
         ));
     }
 
@@ -165,7 +175,7 @@ class PublicController extends Controller
 
     public function news(Request $request)
     {
-        $query = News::where('is_published', true);
+        $query = News::where('is_published', true)->with('author');
 
         if ($request->filled('category')) {
             $query->where('category', $request->category);
@@ -183,6 +193,7 @@ class PublicController extends Controller
         
         $featuredNews = News::where('is_published', true)
             ->where('is_featured', true)
+            ->with('author')
             ->latest('published_at')
             ->first();
             
@@ -200,6 +211,7 @@ class PublicController extends Controller
     {
         $news = News::where('slug', $slug)
             ->where('is_published', true)
+            ->with('author')
             ->firstOrFail();
 
         // Increment view count
@@ -220,6 +232,7 @@ class PublicController extends Controller
         $relatedNews = News::where('is_published', true)
             ->where('id', '!=', $news->id)
             ->where('category', $news->category)
+            ->with('author')
             ->take(3)
             ->get();
 

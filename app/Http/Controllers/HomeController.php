@@ -7,7 +7,9 @@ use App\Models\Fixture;
 use App\Models\MatchResult;
 use App\Models\News;
 use App\Models\Sponsor;
+use App\Models\Merchandise;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -46,13 +48,37 @@ class HomeController extends Controller
             ->topScorers(5)
             ->get();
 
-        return view('home', compact(
+        // Get key players for spotlight
+        $keyPlayers = Player::active()
+            ->orderBy('goals', 'desc')
+            ->take(6)
+            ->get();
+
+        // Get total players count
+        $totalPlayers = Player::active()->count();
+
+        // Get merchandise for display
+        try {
+            $merchandise = Merchandise::all(); // Get all merchandise for debugging
+            Log::info('Merchandise count: ' . $merchandise->count());
+            foreach($merchandise as $item) {
+                Log::info('Item: ' . $item->name . ' - Active: ' . ($item->is_active ? 'Yes' : 'No'));
+            }
+        } catch (\Exception $e) {
+            Log::error('Merchandise error: ' . $e->getMessage());
+            $merchandise = collect(); // Empty collection if table doesn't exist
+        }
+
+        return view('home_professional', compact(
             'nextFixture',
             'latestResult', 
             'featuredNews',
             'recentNews',
             'sponsors',
-            'topScorers'
+            'topScorers',
+            'keyPlayers',
+            'totalPlayers',
+            'merchandise'
         ));
     }
 }

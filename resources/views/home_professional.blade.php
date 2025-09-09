@@ -59,7 +59,7 @@
     <div class="container-fluid px-0 position-relative" style="z-index: 10;">
         <div class="row g-0 min-vh-100">
             <!-- Main Hero Content -->
-            <div class="col-lg-8 d-flex align-items-center">
+            <div class="col-lg-8 col-12 d-flex align-items-center">
                 <div class="hero-content p-4 p-lg-5 w-100">
                     <div class="container">
                         <div class="row">
@@ -508,7 +508,7 @@
             </div>
             
             <!--most trending news -->
-            <div class="col-lg-4 d-none d-lg-flex align-items-center">
+            <div class="col-lg-4 col-12 d-flex align-items-center">
                 <div class="stats-panel w-100 p-4 position-relative" style="animation: slideInRight 1.2s ease-out 0.4s both;">
                     <div class="stats-container" style="
                         background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
@@ -518,36 +518,134 @@
                         padding: 2rem;
                         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
                     ">
-                        <div class="text-center mb-4">
-                            <h3 class="stats-title mb-2" style="
-                                color: #ffffff; 
-                                text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-                                font-size: 1.8rem;
-                                font-weight: 800;
-                            ">Season Stats</h3>
-                        
-                        
-                        <div class="stat-item mb-4 d-flex align-items-center" style="
-                            background: rgba(255, 255, 255, 0.1);
-                            border-radius: 15px;
-                            padding: 1.2rem;
-                            transition: all 0.3s ease;
-                        " onmouseover="this.style.background='rgba(255, 255, 255, 0.15)'; this.style.transform='translateX(5px)'"
-                           onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateX(0)'">
-                            <div class="stat-icon me-3" style="
-                                width: 50px; height: 50px;
-                                background: linear-gradient(135deg, #007bff, #0056b3);
+                        <!-- Trending News Header -->
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="trending-icon me-3" style="
+                                width: 50px;
+                                height: 50px;
+                                background: linear-gradient(135deg, #ff6b6b, #ee5a52);
                                 border-radius: 50%;
                                 display: flex;
                                 align-items: center;
                                 justify-content: center;
+                                box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
                             ">
-                               <!--write here the most trending news, pull the latest published-->
-                               <!-- publish here the latest news --->
-                        
+                                <i class="bi bi-fire" style="color: white; font-size: 1.5rem;"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0" style="
+                                    color: white;
+                                    font-weight: 700;
+                                    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+                                ">Trending Now</h4>
+                                <small style="
+                                    color: rgba(255, 255, 255, 0.8);
+                                    font-weight: 500;
+                                ">Most Popular Story</small>
+                            </div>
+                        </div>
+
+                        @if($featuredNews->count() > 0)
+                            @php $trendingNews = $featuredNews->first(); @endphp
+                            <!-- Trending News Card -->
+                            <div class="trending-news-card" style="
+                                background: rgba(255, 255, 255, 0.95);
+                                border-radius: 20px;
+                                overflow: hidden;
+                                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+                                transition: all 0.3s ease;
+                            " onmouseover="this.style.transform='scale(1.02)'" 
+                               onmouseout="this.style.transform='scale(1)'">
+                                <!-- News Image -->
+                                <div class="trending-image position-relative" style="height: 200px; overflow: hidden;">
+                                    @if($trendingNews->featured_image)
+                                        <img src="{{ asset('storage/' . $trendingNews->featured_image) }}" 
+                                             alt="{{ $trendingNews->title }}" 
+                                             class="w-100 h-100" 
+                                             style="object-fit: cover;">
+                                    @else
+                                        <div class="placeholder-bg d-flex align-items-center justify-content-center h-100" 
+                                             style="background: linear-gradient(135deg, #1b5e20, #2e7d32);">
+                                            <i class="bi bi-newspaper text-white" style="font-size: 3rem; opacity: 0.7;"></i>
+                                        </div>
+                                    @endif
+                                    <!-- Trending Badge -->
+                                    <div class="position-absolute top-0 end-0 m-3">
+                                        <span class="badge" style="
+                                            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+                                            font-size: 0.75rem;
+                                            padding: 0.5rem 1rem;
+                                            border-radius: 20px;
+                                            font-weight: 600;
+                                            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+                                        ">
+                                            <i class="bi bi-fire me-1"></i>Trending
+                                        </span>
+                                    </div>
+                                    <!-- Gradient Overlay -->
+                                    <div class="position-absolute bottom-0 start-0 w-100" style="
+                                        height: 50px;
+                                        background: linear-gradient(transparent, rgba(0,0,0,0.7));
+                                    "></div>
+                                </div>
+
+                                <!-- News Content -->
+                                <div class="p-3">
+                                    <!-- Publication Date -->
+                                    <div class="mb-2">
+                                        <small class="text-muted d-flex align-items-center">
+                                            <i class="bi bi-calendar3 me-1"></i>
+                                            {{ $trendingNews->published_at->diffForHumans() }}
+                                        </small>
+                                    </div>
+
+                                    <!-- News Title -->
+                                    <h5 class="fw-bold mb-2" style="
+                                        color: #1b5e20;
+                                        line-height: 1.3;
+                                        font-size: 1.1rem;
+                                    ">{{ Str::limit($trendingNews->title, 70) }}</h5>
+
+                                    <!-- News Excerpt -->
+                                    <p class="text-muted mb-3" style="
+                                        font-size: 0.9rem;
+                                        line-height: 1.4;
+                                    ">{{ Str::limit(strip_tags($trendingNews->content), 100) }}</p>
+
+                                    <!-- Read More Button -->
+                                    <a href="{{ route('news.show', $trendingNews->slug) }}" 
+                                       class="btn btn-sm w-100" style="
+                                        background: linear-gradient(135deg, #1b5e20, #2e7d32);
+                                        color: white;
+                                        border: none;
+                                        border-radius: 10px;
+                                        font-weight: 600;
+                                        padding: 0.6rem 1rem;
+                                        transition: all 0.3s ease;
+                                    " onmouseover="this.style.background='linear-gradient(135deg, #2e7d32, #388e3c)'"
+                                       onmouseout="this.style.background='linear-gradient(135deg, #1b5e20, #2e7d32)'">
+                                        Read Full Story
+                                        <i class="bi bi-arrow-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        @else
+                            <!-- No News Available -->
+                            <div class="text-center py-4">
+                                <div class="mb-3">
+                                    <i class="bi bi-newspaper" style="
+                                        font-size: 3rem;
+                                        color: rgba(255, 255, 255, 0.5);
+                                    "></i>
+                                </div>
+                                <p style="
+                                    color: rgba(255, 255, 255, 0.8);
+                                    font-weight: 500;
+                                ">No trending news available</p>
+                            </div>
+                        @endif
+
                     </div>
-                </div>
-            </div>
         </div>
     </div>
     
@@ -638,7 +736,7 @@
     <div class="container">
         <div class="row g-4">
             <!-- Next Match Card -->
-            <div class="col-lg-6">
+            <div class="col-lg-6" style="animation: slideInLeft 1.2s ease-out 0.4s both; ">
                 @if($nextFixture)
                 <div class="card h-100 shadow-sm border-0">
                     <div class="card-header bg-primary text-white">
@@ -829,6 +927,249 @@
     </div>
 </section>
 @endif
+<!--jerseys section-->
+<!-- 4. Team Kits & Merchandise Section -->
+<section class="jerseys-section py-5 bg-dark text-white position-relative overflow-hidden">
+    <!-- Background Image -->
+    <div class="position-absolute w-100 h-100" style="
+        background: linear-gradient(135deg, rgba(27, 94, 32, 0.9) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(27, 94, 32, 0.9) 100%),
+                    url('{{ asset('images/stadium-background.jpg') }}');
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        z-index: 1;
+    "></div>
+    
+    <!-- Additional Overlay Pattern -->
+    <div class="position-absolute w-100 h-100" style="
+        background-image: 
+            radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 40%),
+            radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 40%),
+            radial-gradient(circle at 40% 60%, rgba(27, 94, 32, 0.1) 0%, transparent 50%);
+        z-index: 2;
+    "></div>
+    
+    <div class="container position-relative" style="z-index: 3;">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="display-4 fw-bold mb-3" style="
+                    background: linear-gradient(135deg, #ffd700, #ffb300);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                ">Official Team Kits</h2>
+                <p class="lead text-white-50">Wear your colors with pride - Official Buhimba United Saints FC merchandise</p>
+            </div>
+        </div>
+        
+        <div class="row g-4 mb-5">
+            <!-- Home Kit -->
+            <div class="col-lg-4 col-md-6">
+                <div class="kit-card text-center" style="
+                    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+                    backdrop-filter: blur(15px);
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    border-radius: 25px;
+                    padding: 2rem;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+                " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0, 0, 0, 0.3)'"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'">
+                    <div class="kit-image mb-4">
+                        @if(isset($merchandise) && $merchandise->where('type', 'home_kit')->first() && $merchandise->where('type', 'home_kit')->first()->image)
+                            <img src="{{ asset('storage/' . $merchandise->where('type', 'home_kit')->first()->image) }}" 
+                                 alt="Home Kit" class="img-fluid" style="max-height: 300px;">
+                        @else
+                            <div class="kit-placeholder" style="
+                                width: 200px;
+                                height: 250px;
+                                background: linear-gradient(135deg, #1b5e20, #2e7d32);
+                                border-radius: 15px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                margin: 0 auto;
+                                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+                            ">
+                                <i class="bi bi-person-fill text-white mb-3" style="font-size: 4rem;"></i>
+                                <h6 class="text-white fw-bold">HOME KIT</h6>
+                            </div>
+                        @endif
+                    </div>
+                    <h4 class="fw-bold text-white mb-2">Home Kit</h4>
+                    <p class="text-white-50 mb-3">Classic green jersey with gold accents</p>
+                    <div class="kit-price mb-3">
+                        <span class="h5 fw-bold text-warning">
+                            UGX {{ isset($merchandise) && $merchandise->where('type', 'home_kit')->first() ? number_format($merchandise->where('type', 'home_kit')->first()->price) : '75,000' }}
+                        </span>
+                    </div>
+                    <button class="btn btn-warning btn-lg fw-bold px-4" style="border-radius: 15px;">
+                        <i class="bi bi-cart-plus me-2"></i>Order Now
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Away Kit -->
+            <div class="col-lg-4 col-md-6">
+                <div class="kit-card text-center" style="
+                    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+                    backdrop-filter: blur(15px);
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    border-radius: 25px;
+                    padding: 2rem;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+                " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0, 0, 0, 0.3)'"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'">
+                    <div class="kit-image mb-4">
+                        @if(isset($merchandise) && $merchandise->where('type', 'away_kit')->first() && $merchandise->where('type', 'away_kit')->first()->image)
+                            <img src="{{ asset('storage/' . $merchandise->where('type', 'away_kit')->first()->image) }}" 
+                                 alt="Away Kit" class="img-fluid" style="max-height: 300px;">
+                        @else
+                            <div class="kit-placeholder" style="
+                                width: 200px;
+                                height: 250px;
+                                background: linear-gradient(135deg, #ffffff, #f8f9fa);
+                                border: 3px solid #1b5e20;
+                                border-radius: 15px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                margin: 0 auto;
+                                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+                            ">
+                                <i class="bi bi-person-fill text-success mb-3" style="font-size: 4rem;"></i>
+                                <h6 class="text-success fw-bold">AWAY KIT</h6>
+                            </div>
+                        @endif
+                    </div>
+                    <h4 class="fw-bold text-white mb-2">Away Kit</h4>
+                    <p class="text-white-50 mb-3">Clean white jersey with green details</p>
+                    <div class="kit-price mb-3">
+                        <span class="h5 fw-bold text-warning">
+                            UGX {{ isset($merchandise) && $merchandise->where('type', 'away_kit')->first() ? number_format($merchandise->where('type', 'away_kit')->first()->price) : '75,000' }}
+                        </span>
+                    </div>
+                    <button class="btn btn-warning btn-lg fw-bold px-4" style="border-radius: 15px;">
+                        <i class="bi bi-cart-plus me-2"></i>Order Now
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Third Kit -->
+            <div class="col-lg-4 col-md-6 mx-auto">
+                <div class="kit-card text-center" style="
+                    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+                    backdrop-filter: blur(15px);
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    border-radius: 25px;
+                    padding: 2rem;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+                " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0, 0, 0, 0.3)'"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'">
+                    <div class="kit-image mb-4">
+                        @if(isset($merchandise) && $merchandise->where('type', 'third_kit')->first() && $merchandise->where('type', 'third_kit')->first()->image)
+                            <img src="{{ asset('storage/' . $merchandise->where('type', 'third_kit')->first()->image) }}" 
+                                 alt="Third Kit" class="img-fluid" style="max-height: 300px;">
+                        @else
+                            <div class="kit-placeholder" style="
+                                width: 200px;
+                                height: 250px;
+                                background: linear-gradient(135deg, #ffd700, #ffb300);
+                                border-radius: 15px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                margin: 0 auto;
+                                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+                            ">
+                                <i class="bi bi-person-fill text-dark mb-3" style="font-size: 4rem;"></i>
+                                <h6 class="text-dark fw-bold">THIRD KIT</h6>
+                            </div>
+                        @endif
+                    </div>
+                    <h4 class="fw-bold text-white mb-2">Third Kit</h4>
+                    <p class="text-white-50 mb-3">Bold gold design for special occasions</p>
+                    <div class="kit-price mb-3">
+                        <span class="h5 fw-bold text-warning">
+                            UGX {{ isset($merchandise) && $merchandise->where('type', 'third_kit')->first() ? number_format($merchandise->where('type', 'third_kit')->first()->price) : '80,000' }}
+                        </span>
+                    </div>
+                    <button class="btn btn-warning btn-lg fw-bold px-4" style="border-radius: 15px;">
+                        <i class="bi bi-cart-plus me-2"></i>Order Now
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Additional Merchandise -->
+        <div class="row">
+            <div class="col-12 text-center">
+                <h3 class="fw-bold text-white mb-4">More Merchandise</h3>
+                <div class="row g-3">
+                    <div class="col-6 col-md-3">
+                        <div class="merchandise-item p-3" style="
+                            background: rgba(255, 255, 255, 0.1);
+                            border-radius: 15px;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'"
+                           onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                            <i class="bi bi-cup text-warning fs-2 mb-2"></i>
+                            <h6 class="text-white fw-bold">Scarves</h6>
+                            <small class="text-white-50">UGX 25,000</small>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="merchandise-item p-3" style="
+                            background: rgba(255, 255, 255, 0.1);
+                            border-radius: 15px;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'"
+                           onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                            <i class="bi bi-emoji-sunglasses text-warning fs-2 mb-2"></i>
+                            <h6 class="text-white fw-bold">Caps</h6>
+                            <small class="text-white-50">UGX 35,000</small>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="merchandise-item p-3" style="
+                            background: rgba(255, 255, 255, 0.1);
+                            border-radius: 15px;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'"
+                           onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                            <i class="bi bi-bag text-warning fs-2 mb-2"></i>
+                            <h6 class="text-white fw-bold">Bags</h6>
+                            <small class="text-white-50">UGX 45,000</small>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="merchandise-item p-3" style="
+                            background: rgba(255, 255, 255, 0.1);
+                            border-radius: 15px;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'"
+                           onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                            <i class="bi bi-phone text-warning fs-2 mb-2"></i>
+                            <h6 class="text-white fw-bold">Accessories</h6>
+                            <small class="text-white-50">From UGX 15,000</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="#" class="btn btn-warning btn-lg fw-bold px-5" style="border-radius: 20px;">
+                <i class="bi bi-shop me-2"></i>Visit Official Store
+            </a>
+        </div>
+    </div>
+</section>
 
 <!-- 4. Player Spotlight Section -->
 <section class="players-section py-5 bg-light">
@@ -1293,10 +1634,39 @@ document.addEventListener('DOMContentLoaded', function() {
     
     .stats-panel {
         margin-top: 2rem;
+        padding: 1rem !important;
+    }
+    
+    .stats-container {
+        padding: 1.5rem !important;
+    }
+    
+    .trending-news-card {
+        margin-bottom: 1rem;
+    }
+    
+    .trending-image {
+        height: 150px !important;
     }
     
     .match-info-cards .col-md-6 {
         margin-bottom: 1rem;
+    }
+    
+    /* Make trending section stack below main content on mobile */
+    .row.g-0.min-vh-100 {
+        flex-direction: column;
+    }
+    
+    .col-lg-8.col-12 {
+        order: 1;
+        min-height: 80vh;
+    }
+    
+    .col-lg-4.col-12 {
+        order: 2;
+        min-height: auto;
+        margin-top: 2rem;
     }
 }
 
@@ -1313,6 +1683,32 @@ document.addEventListener('DOMContentLoaded', function() {
     .stat-icon {
         margin-right: 0;
         margin-bottom: 0.5rem;
+    }
+    
+    .stats-panel {
+        padding: 0.75rem !important;
+    }
+    
+    .stats-container {
+        padding: 1rem !important;
+        border-radius: 15px !important;
+    }
+    
+    .trending-news-card {
+        border-radius: 15px !important;
+    }
+    
+    .trending-image {
+        height: 120px !important;
+    }
+    
+    .trending-icon {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .trending-icon i {
+        font-size: 1.2rem !important;
     }
 }
 </style>

@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\StaffController;
 use App\Http\Controllers\Admin\SponsorController;
 use App\Http\Controllers\Admin\MatchResultController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\MerchandiseController;
 use Illuminate\Support\Facades\Route;
 
 // Public Routes
@@ -55,6 +56,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::resource('news', NewsController::class);
     Route::resource('sponsors', SponsorController::class);
     Route::resource('users', UserController::class);
+    Route::resource('merchandise', MerchandiseController::class);
     
     // Settings Routes
     Route::get('settings/images', [App\Http\Controllers\Admin\SettingsController::class, 'images'])->name('settings.images');
