@@ -6,7 +6,7 @@
 @section('content')
 
 <!-- Professional Hero Section -->
-<section class="hero-section position-relative overflow-hidden" style="min-height: 100vh;">
+<section class="hero-section position-relative overflow-hidden" style="min-height: 100vh; margin-top: -1px;">
     <!-- Dynamic Background with Admin Control -->
     <div class="hero-background position-absolute w-100 h-100" style="z-index: 1;">
         <!-- Image Background with Professional Football Stadium -->
@@ -21,7 +21,7 @@
             background-position: center center;
             background-attachment: fixed;
         "></div>
-        
+
         <!-- Animated Overlay Pattern -->
         <div class="hero-pattern position-absolute w-100 h-100" style="
             background-image: 
@@ -30,7 +30,7 @@
                 radial-gradient(circle at 40% 40%, rgba(27, 94, 32, 0.1) 0%, transparent 50%);
             animation: patternFloat 25s ease-in-out infinite;
         "></div>
-        
+
         <!-- Floating Football Elements -->
         <div class="position-absolute w-100 h-100" style="z-index: 2;">
             <div class="position-absolute" style="
@@ -55,7 +55,7 @@
             "></div>
         </div>
     </div>
-    
+
     <div class="container-fluid px-0 position-relative" style="z-index: 10;">
         <div class="row g-0 min-vh-100">
             <!-- Main Hero Content -->
@@ -79,8 +79,8 @@
                                                 border: 3px solid rgba(255, 215, 0, 0.3);
                                                 box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
                                             ">
-                                                <img src="{{ asset('images/logo.png') }}" alt="Buhimba United Saints FC" 
-                                                     class="club-logo" style="height: 70px; filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));">
+                                                <img src="{{ asset('images/logo.png') }}" alt="Buhimba United Saints FC"
+                                                    class="club-logo" style="height: 70px; filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));">
                                             </div>
                                             <!-- Pulsing Ring Animation -->
                                             <div class="position-absolute top-0 start-0 w-100 h-100" style="
@@ -111,7 +111,7 @@
                                             ">SAINTS FC</h2>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Enhanced Club Tagline -->
                                     <div class="club-tagline-container mb-4">
                                         <div class="d-flex align-items-center">
@@ -135,7 +135,7 @@
                                             "></div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Club Stats Summary -->
                                     <div class="club-stats-summary">
                                         <div class="row g-3">
@@ -211,7 +211,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- Enhanced Match Info Cards -->
                                 <div class="match-info-cards mb-5" style="animation: slideInUp 1.2s ease-out 0.3s both;">
                                     <div class="row g-4">
@@ -227,7 +227,7 @@
                                                 overflow: hidden;
                                                 transition: all 0.3s ease;
                                             " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 45px rgba(0, 0, 0, 0.15)'"
-                                               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.1)'">
+                                                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.1)'">
                                                 <div class="card-header border-0 py-3" style="
                                                     background: linear-gradient(135deg, #1b5e20, #2e7d32);
                                                 ">
@@ -314,7 +314,7 @@
                                             </div>
                                             @endif
                                         </div>
-                                        
+
                                         <!-- Latest Result Card -->
                                         <div class="col-md-6">
                                             @if($latestResult)
@@ -327,7 +327,7 @@
                                                 overflow: hidden;
                                                 transition: all 0.3s ease;
                                             " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 45px rgba(0, 0, 0, 0.15)'"
-                                               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.1)'">
+                                                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.1)'">
                                                 <div class="card-header border-0 py-3" style="
                                                     background: linear-gradient(135deg, #28a745, #20c997);
                                                 ">
@@ -422,7 +422,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- Enhanced Primary CTAs -->
                                 <div class="hero-cta-section" style="animation: slideInUp 1.2s ease-out 0.6s both;">
                                     <div class="row g-3">
@@ -441,7 +441,7 @@
                                                 backdrop-filter: blur(10px);
                                                 border: 2px solid rgba(255, 255, 255, 0.1);
                                             " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 35px rgba(27, 94, 32, 0.4)'; this.style.background='linear-gradient(135deg, #2e7d32, #388e3c)'"
-                                               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(27, 94, 32, 0.3)'; this.style.background='linear-gradient(135deg, #1b5e20, #2e7d32)'">
+                                                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(27, 94, 32, 0.3)'; this.style.background='linear-gradient(135deg, #1b5e20, #2e7d32)'">
                                                 <i class="bi bi-calendar-event me-2"></i>
                                                 <span>View Fixtures</span>
                                                 <div class="position-absolute top-0 start-0 w-100 h-100" style="
@@ -466,7 +466,7 @@
                                                 backdrop-filter: blur(10px);
                                                 border: 2px solid rgba(255, 255, 255, 0.2);
                                             " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 35px rgba(255, 215, 0, 0.4)'; this.style.background='linear-gradient(135deg, #ffb300, #ffc107)'"
-                                               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(255, 215, 0, 0.3)'; this.style.background='linear-gradient(135deg, #ffd700, #ffb300)'">
+                                                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(255, 215, 0, 0.3)'; this.style.background='linear-gradient(135deg, #ffd700, #ffb300)'">
                                                 <i class="bi bi-ticket-perforated me-2"></i>
                                                 <span>Buy Tickets</span>
                                                 <div class="position-absolute top-0 start-0 w-100 h-100" style="
@@ -489,7 +489,7 @@
                                                 backdrop-filter: blur(15px);
                                                 transition: all 0.3s ease;
                                             " onmouseover="this.style.transform='translateY(-3px)'; this.style.background='rgba(255, 255, 255, 0.25)'; this.style.borderColor='rgba(255, 255, 255, 0.5)'"
-                                               onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255, 255, 255, 0.15)'; this.style.borderColor='rgba(255, 255, 255, 0.3)'">
+                                                onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255, 255, 255, 0.15)'; this.style.borderColor='rgba(255, 255, 255, 0.3)'">
                                                 <i class="bi bi-newspaper me-2"></i>
                                                 <span>Latest News</span>
                                                 <div class="position-absolute top-0 start-0 w-100 h-100" style="
@@ -506,7 +506,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!--most trending news -->
             <div class="col-lg-4 col-12 d-flex align-items-center">
                 <div class="stats-panel w-100 p-4 position-relative" style="animation: slideInRight 1.2s ease-out 0.4s both;">
@@ -546,32 +546,32 @@
                         </div>
 
                         @if($featuredNews->count() > 0)
-                            @php $trendingNews = $featuredNews->first(); @endphp
-                            <!-- Trending News Card -->
-                            <div class="trending-news-card" style="
+                        @php $trendingNews = $featuredNews->first(); @endphp
+                        <!-- Trending News Card -->
+                        <div class="trending-news-card" style="
                                 background: rgba(255, 255, 255, 0.95);
                                 border-radius: 20px;
                                 overflow: hidden;
                                 box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
                                 transition: all 0.3s ease;
-                            " onmouseover="this.style.transform='scale(1.02)'" 
-                               onmouseout="this.style.transform='scale(1)'">
-                                <!-- News Image -->
-                                <div class="trending-image position-relative" style="height: 200px; overflow: hidden;">
-                                    @if($trendingNews->featured_image)
-                                        <img src="{{ asset('storage/' . $trendingNews->featured_image) }}" 
-                                             alt="{{ $trendingNews->title }}" 
-                                             class="w-100 h-100" 
-                                             style="object-fit: cover;">
-                                    @else
-                                        <div class="placeholder-bg d-flex align-items-center justify-content-center h-100" 
-                                             style="background: linear-gradient(135deg, #1b5e20, #2e7d32);">
-                                            <i class="bi bi-newspaper text-white" style="font-size: 3rem; opacity: 0.7;"></i>
-                                        </div>
-                                    @endif
-                                    <!-- Trending Badge -->
-                                    <div class="position-absolute top-0 end-0 m-3">
-                                        <span class="badge" style="
+                            " onmouseover="this.style.transform='scale(1.02)'"
+                            onmouseout="this.style.transform='scale(1)'">
+                            <!-- News Image -->
+                            <div class="trending-image position-relative" style="height: 200px; overflow: hidden;">
+                                @if($trendingNews->featured_image)
+                                <img src="{{ asset('storage/' . $trendingNews->featured_image) }}"
+                                    alt="{{ $trendingNews->title }}"
+                                    class="w-100 h-100"
+                                    style="object-fit: cover;">
+                                @else
+                                <div class="placeholder-bg d-flex align-items-center justify-content-center h-100"
+                                    style="background: linear-gradient(135deg, #1b5e20, #2e7d32);">
+                                    <i class="bi bi-newspaper text-white" style="font-size: 3rem; opacity: 0.7;"></i>
+                                </div>
+                                @endif
+                                <!-- Trending Badge -->
+                                <div class="position-absolute top-0 end-0 m-3">
+                                    <span class="badge" style="
                                             background: linear-gradient(135deg, #ff6b6b, #ee5a52);
                                             font-size: 0.75rem;
                                             padding: 0.5rem 1rem;
@@ -579,42 +579,42 @@
                                             font-weight: 600;
                                             box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
                                         ">
-                                            <i class="bi bi-fire me-1"></i>Trending
-                                        </span>
-                                    </div>
-                                    <!-- Gradient Overlay -->
-                                    <div class="position-absolute bottom-0 start-0 w-100" style="
+                                        <i class="bi bi-fire me-1"></i>Trending
+                                    </span>
+                                </div>
+                                <!-- Gradient Overlay -->
+                                <div class="position-absolute bottom-0 start-0 w-100" style="
                                         height: 50px;
                                         background: linear-gradient(transparent, rgba(0,0,0,0.7));
                                     "></div>
+                            </div>
+
+                            <!-- News Content -->
+                            <div class="p-3">
+                                <!-- Publication Date -->
+                                <div class="mb-2">
+                                    <small class="text-muted d-flex align-items-center">
+                                        <i class="bi bi-calendar3 me-1"></i>
+                                        {{ $trendingNews->published_at->diffForHumans() }}
+                                    </small>
                                 </div>
 
-                                <!-- News Content -->
-                                <div class="p-3">
-                                    <!-- Publication Date -->
-                                    <div class="mb-2">
-                                        <small class="text-muted d-flex align-items-center">
-                                            <i class="bi bi-calendar3 me-1"></i>
-                                            {{ $trendingNews->published_at->diffForHumans() }}
-                                        </small>
-                                    </div>
-
-                                    <!-- News Title -->
-                                    <h5 class="fw-bold mb-2" style="
+                                <!-- News Title -->
+                                <h5 class="fw-bold mb-2" style="
                                         color: #1b5e20;
                                         line-height: 1.3;
                                         font-size: 1.1rem;
                                     ">{{ Str::limit($trendingNews->title, 70) }}</h5>
 
-                                    <!-- News Excerpt -->
-                                    <p class="text-muted mb-3" style="
+                                <!-- News Excerpt -->
+                                <p class="text-muted mb-3" style="
                                         font-size: 0.9rem;
                                         line-height: 1.4;
                                     ">{{ Str::limit(strip_tags($trendingNews->content), 100) }}</p>
 
-                                    <!-- Read More Button -->
-                                    <a href="{{ route('news.show', $trendingNews->slug) }}" 
-                                       class="btn btn-sm w-100" style="
+                                <!-- Read More Button -->
+                                <a href="{{ route('news.show', $trendingNews->slug) }}"
+                                    class="btn btn-sm w-100" style="
                                         background: linear-gradient(135deg, #1b5e20, #2e7d32);
                                         color: white;
                                         border: none;
@@ -623,36 +623,36 @@
                                         padding: 0.6rem 1rem;
                                         transition: all 0.3s ease;
                                     " onmouseover="this.style.background='linear-gradient(135deg, #2e7d32, #388e3c)'"
-                                       onmouseout="this.style.background='linear-gradient(135deg, #1b5e20, #2e7d32)'">
-                                        Read Full Story
-                                        <i class="bi bi-arrow-right ms-1"></i>
-                                    </a>
-                                </div>
+                                    onmouseout="this.style.background='linear-gradient(135deg, #1b5e20, #2e7d32)'">
+                                    Read Full Story
+                                    <i class="bi bi-arrow-right ms-1"></i>
+                                </a>
                             </div>
+                        </div>
                         @else
-                            <!-- No News Available -->
-                            <div class="text-center py-4">
-                                <div class="mb-3">
-                                    <i class="bi bi-newspaper" style="
+                        <!-- No News Available -->
+                        <div class="text-center py-4">
+                            <div class="mb-3">
+                                <i class="bi bi-newspaper" style="
                                         font-size: 3rem;
                                         color: rgba(255, 255, 255, 0.5);
                                     "></i>
-                                </div>
-                                <p style="
+                            </div>
+                            <p style="
                                     color: rgba(255, 255, 255, 0.8);
                                     font-weight: 500;
                                 ">No trending news available</p>
-                            </div>
+                        </div>
                         @endif
 
                     </div>
-        </div>
-    </div>
-    
-    <!-- Enhanced Scroll Indicator -->
-    <div class="scroll-indicator position-absolute bottom-0 start-50 translate-middle-x mb-4" style="z-index: 10;">
-        <div class="scroll-arrow text-center" style="animation: bounce 2s infinite;">
-            <div class="scroll-text mb-2" style="
+                </div>
+            </div>
+
+            <!-- Enhanced Scroll Indicator -->
+            <div class="scroll-indicator position-absolute bottom-0 start-50 translate-middle-x mb-4" style="z-index: 10;">
+                <div class="scroll-arrow text-center" style="animation: bounce 2s infinite;">
+                    <div class="scroll-text mb-2" style="
                 color: #ffffff;
                 font-size: 0.8rem;
                 font-weight: 600;
@@ -660,7 +660,7 @@
                 letter-spacing: 1px;
                 opacity: 0.8;
             ">Explore More</div>
-            <div class="scroll-icon" style="
+                    <div class="scroll-icon" style="
                 width: 40px;
                 height: 40px;
                 background: rgba(255, 255, 255, 0.1);
@@ -673,11 +673,11 @@
                 backdrop-filter: blur(10px);
                 transition: all 0.3s ease;
             " onmouseover="this.style.background='rgba(255, 215, 0, 0.2)'; this.style.borderColor='rgba(255, 215, 0, 0.5)'"
-               onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.borderColor='rgba(255, 255, 255, 0.3)'">
-                <i class="bi bi-chevron-down" style="color: #ffffff; font-size: 1.2rem;"></i>
+                        onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.borderColor='rgba(255, 255, 255, 0.3)'">
+                        <i class="bi bi-chevron-down" style="color: #ffffff; font-size: 1.2rem;"></i>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 </section>
 
 <!-- Sponsors Carousel Section -->
@@ -696,30 +696,30 @@
                         @foreach($sponsors as $sponsor)
                         <div class="sponsor-slide mx-3">
                             @if($sponsor->logo)
-                                <img src="{{ asset('storage/' . $sponsor->logo) }}" 
-                                     alt="{{ $sponsor->name }}" 
-                                     class="sponsor-logo"
-                                     style="max-height: 60px; filter: grayscale(100%); opacity: 0.7;">
+                            <img src="{{ asset('storage/' . $sponsor->logo) }}"
+                                alt="{{ $sponsor->name }}"
+                                class="sponsor-logo"
+                                style="max-height: 60px; filter: grayscale(100%); opacity: 0.7;">
                             @else
-                                <div class="sponsor-placeholder">
-                                    <span class="sponsor-name">{{ $sponsor->name }}</span>
-                                </div>
+                            <div class="sponsor-placeholder">
+                                <span class="sponsor-name">{{ $sponsor->name }}</span>
+                            </div>
                             @endif
                         </div>
                         @endforeach
-                        
+
                         <!-- Duplicate for seamless loop -->
                         @foreach($sponsors as $sponsor)
                         <div class="sponsor-slide mx-3">
                             @if($sponsor->logo)
-                                <img src="{{ asset('storage/' . $sponsor->logo) }}" 
-                                     alt="{{ $sponsor->name }}" 
-                                     class="sponsor-logo"
-                                     style="max-height: 60px; filter: grayscale(100%); opacity: 0.7;">
+                            <img src="{{ asset('storage/' . $sponsor->logo) }}"
+                                alt="{{ $sponsor->name }}"
+                                class="sponsor-logo"
+                                style="max-height: 60px; filter: grayscale(100%); opacity: 0.7;">
                             @else
-                                <div class="sponsor-placeholder">
-                                    <span class="sponsor-name">{{ $sponsor->name }}</span>
-                                </div>
+                            <div class="sponsor-placeholder">
+                                <span class="sponsor-name">{{ $sponsor->name }}</span>
+                            </div>
                             @endif
                         </div>
                         @endforeach
@@ -768,7 +768,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="match-details">
                             <ul class="list-unstyled">
                                 <li class="mb-2">
@@ -805,13 +805,13 @@
                 </div>
                 @endif
             </div>
-            
+
             <!-- Latest Result Card -->
             <div class="col-lg-6">
                 @if($latestResult)
                 <div class="card h-100 shadow-sm border-0">
                     <div class="card-header bg-success text-white">
-                        <h5 class="card-title mb-0">
+                        <h5 class="card-title mb-0" style="background: linear-gradient(135deg, #28a745, #20c997) important;">
                             <i class="bi bi-check-circle me-2"></i>Latest Result
                         </h5>
                     </div>
@@ -840,7 +840,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="match-details">
                             <ul class="list-unstyled">
                                 <li class="mb-2">
@@ -887,18 +887,18 @@
                 <p class="lead text-muted">Stay up to date with the latest happenings at the club</p>
             </div>
         </div>
-        
+
         <div class="row g-4">
             @foreach($featuredNews->take(3) as $article)
             <div class="col-lg-4 col-md-6">
                 <div class="card h-100 shadow-sm border-0 news-card">
                     <div class="card-img-wrapper position-relative" style="height: 250px; overflow: hidden;">
                         @if($article->featured_image)
-                            <img src="{{ asset('storage/' . $article->featured_image) }}" class="card-img-top h-100 w-100 img-fluid" style="object-fit: cover;" alt="{{ $article->title }}">
+                        <img src="{{ asset('storage/' . $article->featured_image) }}" class="card-img-top h-100 w-100 img-fluid" style="object-fit: cover;" alt="{{ $article->title }}">
                         @else
-                            <div class="placeholder-img bg-light d-flex align-items-center justify-content-center h-100">
-                                <i class="bi bi-newspaper text-muted" style="font-size: 3rem;"></i>
-                            </div>
+                        <div class="placeholder-img bg-light d-flex align-items-center justify-content-center h-100">
+                            <i class="bi bi-newspaper text-muted" style="font-size: 3rem;"></i>
+                        </div>
                         @endif
                         <div class="news-overlay position-absolute bottom-0 start-0 end-0 bg-gradient" style="background: linear-gradient(transparent, rgba(0,0,0,0.7)); height: 50px;"></div>
                     </div>
@@ -918,7 +918,7 @@
             </div>
             @endforeach
         </div>
-        
+
         <div class="text-center mt-5">
             <a href="{{ route('news.index') }}" class="btn btn-primary btn-lg">
                 <i class="bi bi-newspaper me-2"></i>View All News
@@ -939,7 +939,7 @@
         background-attachment: fixed;
         z-index: 1;
     "></div>
-    
+
     <!-- Additional Overlay Pattern -->
     <div class="position-absolute w-100 h-100" style="
         background-image: 
@@ -948,7 +948,7 @@
             radial-gradient(circle at 40% 60%, rgba(27, 94, 32, 0.1) 0%, transparent 50%);
         z-index: 2;
     "></div>
-    
+
     <div class="container position-relative" style="z-index: 3;">
         <div class="row mb-5">
             <div class="col-12 text-center">
@@ -961,7 +961,7 @@
                 <p class="lead text-white-50">Wear your colors with pride - Official Buhimba United Saints FC merchandise</p>
             </div>
         </div>
-        
+
         <div class="row g-4 mb-5">
             <!-- Home Kit -->
             <div class="col-lg-4 col-md-6">
@@ -974,13 +974,13 @@
                     transition: all 0.3s ease;
                     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
                 " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0, 0, 0, 0.3)'"
-                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'">
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'">
                     <div class="kit-image mb-4">
                         @if(isset($merchandise) && $merchandise->where('type', 'home_kit')->first() && $merchandise->where('type', 'home_kit')->first()->image)
-                            <img src="{{ asset('storage/' . $merchandise->where('type', 'home_kit')->first()->image) }}" 
-                                 alt="Home Kit" class="img-fluid" style="max-height: 300px;">
+                        <img src="{{ asset('storage/' . $merchandise->where('type', 'home_kit')->first()->image) }}"
+                            alt="Home Kit" class="img-fluid" style="max-height: 300px;">
                         @else
-                            <div class="kit-placeholder" style="
+                        <div class="kit-placeholder" style="
                                 width: 200px;
                                 height: 250px;
                                 background: linear-gradient(135deg, #1b5e20, #2e7d32);
@@ -992,9 +992,9 @@
                                 margin: 0 auto;
                                 box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
                             ">
-                                <i class="bi bi-person-fill text-white mb-3" style="font-size: 4rem;"></i>
-                                <h6 class="text-white fw-bold">HOME KIT</h6>
-                            </div>
+                            <i class="bi bi-person-fill text-white mb-3" style="font-size: 4rem;"></i>
+                            <h6 class="text-white fw-bold">HOME KIT</h6>
+                        </div>
                         @endif
                     </div>
                     <h4 class="fw-bold text-white mb-2">Home Kit</h4>
@@ -1009,7 +1009,7 @@
                     </button>
                 </div>
             </div>
-            
+
             <!-- Away Kit -->
             <div class="col-lg-4 col-md-6">
                 <div class="kit-card text-center" style="
@@ -1021,13 +1021,13 @@
                     transition: all 0.3s ease;
                     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
                 " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0, 0, 0, 0.3)'"
-                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'">
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'">
                     <div class="kit-image mb-4">
                         @if(isset($merchandise) && $merchandise->where('type', 'away_kit')->first() && $merchandise->where('type', 'away_kit')->first()->image)
-                            <img src="{{ asset('storage/' . $merchandise->where('type', 'away_kit')->first()->image) }}" 
-                                 alt="Away Kit" class="img-fluid" style="max-height: 300px;">
+                        <img src="{{ asset('storage/' . $merchandise->where('type', 'away_kit')->first()->image) }}"
+                            alt="Away Kit" class="img-fluid" style="max-height: 300px;">
                         @else
-                            <div class="kit-placeholder" style="
+                        <div class="kit-placeholder" style="
                                 width: 200px;
                                 height: 250px;
                                 background: linear-gradient(135deg, #ffffff, #f8f9fa);
@@ -1040,9 +1040,9 @@
                                 margin: 0 auto;
                                 box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
                             ">
-                                <i class="bi bi-person-fill text-success mb-3" style="font-size: 4rem;"></i>
-                                <h6 class="text-success fw-bold">AWAY KIT</h6>
-                            </div>
+                            <i class="bi bi-person-fill text-success mb-3" style="font-size: 4rem;"></i>
+                            <h6 class="text-success fw-bold">AWAY KIT</h6>
+                        </div>
                         @endif
                     </div>
                     <h4 class="fw-bold text-white mb-2">Away Kit</h4>
@@ -1057,7 +1057,7 @@
                     </button>
                 </div>
             </div>
-            
+
             <!-- Third Kit -->
             <div class="col-lg-4 col-md-6 mx-auto">
                 <div class="kit-card text-center" style="
@@ -1069,13 +1069,13 @@
                     transition: all 0.3s ease;
                     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
                 " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0, 0, 0, 0.3)'"
-                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'">
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'">
                     <div class="kit-image mb-4">
                         @if(isset($merchandise) && $merchandise->where('type', 'third_kit')->first() && $merchandise->where('type', 'third_kit')->first()->image)
-                            <img src="{{ asset('storage/' . $merchandise->where('type', 'third_kit')->first()->image) }}" 
-                                 alt="Third Kit" class="img-fluid" style="max-height: 300px;">
+                        <img src="{{ asset('storage/' . $merchandise->where('type', 'third_kit')->first()->image) }}"
+                            alt="Third Kit" class="img-fluid" style="max-height: 300px;">
                         @else
-                            <div class="kit-placeholder" style="
+                        <div class="kit-placeholder" style="
                                 width: 200px;
                                 height: 250px;
                                 background: linear-gradient(135deg, #ffd700, #ffb300);
@@ -1087,9 +1087,9 @@
                                 margin: 0 auto;
                                 box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
                             ">
-                                <i class="bi bi-person-fill text-dark mb-3" style="font-size: 4rem;"></i>
-                                <h6 class="text-dark fw-bold">THIRD KIT</h6>
-                            </div>
+                            <i class="bi bi-person-fill text-dark mb-3" style="font-size: 4rem;"></i>
+                            <h6 class="text-dark fw-bold">THIRD KIT</h6>
+                        </div>
                         @endif
                     </div>
                     <h4 class="fw-bold text-white mb-2">Third Kit</h4>
@@ -1105,7 +1105,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Additional Merchandise -->
         <div class="row">
             <div class="col-12 text-center">
@@ -1117,7 +1117,7 @@
                             border-radius: 15px;
                             transition: all 0.3s ease;
                         " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'"
-                           onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                            onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
                             <i class="bi bi-cup text-warning fs-2 mb-2"></i>
                             <h6 class="text-white fw-bold">Scarves</h6>
                             <small class="text-white-50">UGX 25,000</small>
@@ -1129,7 +1129,7 @@
                             border-radius: 15px;
                             transition: all 0.3s ease;
                         " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'"
-                           onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                            onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
                             <i class="bi bi-emoji-sunglasses text-warning fs-2 mb-2"></i>
                             <h6 class="text-white fw-bold">Caps</h6>
                             <small class="text-white-50">UGX 35,000</small>
@@ -1141,7 +1141,7 @@
                             border-radius: 15px;
                             transition: all 0.3s ease;
                         " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'"
-                           onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                            onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
                             <i class="bi bi-bag text-warning fs-2 mb-2"></i>
                             <h6 class="text-white fw-bold">Bags</h6>
                             <small class="text-white-50">UGX 45,000</small>
@@ -1153,7 +1153,7 @@
                             border-radius: 15px;
                             transition: all 0.3s ease;
                         " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'"
-                           onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                            onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
                             <i class="bi bi-phone text-warning fs-2 mb-2"></i>
                             <h6 class="text-white fw-bold">Accessories</h6>
                             <small class="text-white-50">From UGX 15,000</small>
@@ -1162,7 +1162,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="text-center mt-5">
             <a href="#" class="btn btn-warning btn-lg fw-bold px-5" style="border-radius: 20px;">
                 <i class="bi bi-shop me-2"></i>Visit Official Store
@@ -1180,16 +1180,16 @@
                 <p class="lead text-muted">Meet our star players making the difference on the pitch</p>
             </div>
         </div>
-        
+
         @if($keyPlayers->count() > 0)
         <div id="playerCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 @foreach($keyPlayers->chunk(3) as $index => $chunk)
-                <button type="button" data-bs-target="#playerCarousel" data-bs-slide-to="{{ $index }}" 
-                        class="{{ $index === 0 ? 'active' : '' }}" aria-label="Slide {{ $index + 1 }}"></button>
+                <button type="button" data-bs-target="#playerCarousel" data-bs-slide-to="{{ $index }}"
+                    class="{{ $index === 0 ? 'active' : '' }}" aria-label="Slide {{ $index + 1 }}"></button>
                 @endforeach
             </div>
-            
+
             <div class="carousel-inner">
                 @foreach($keyPlayers->chunk(3) as $index => $playerChunk)
                 <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
@@ -1200,13 +1200,13 @@
                                 <div class="card-body p-4">
                                     <div class="player-image mb-3">
                                         @if($player->image)
-                                            <img src="{{ asset('storage/' . $player->image) }}" class="rounded-circle img-fluid" 
-                                                 style="width: 120px; height: 120px; object-fit: cover;" alt="{{ $player->name }}">
+                                        <img src="{{ asset('storage/' . $player->image) }}" class="rounded-circle img-fluid"
+                                            style="width: 120px; height: 120px; object-fit: cover;" alt="{{ $player->name }}">
                                         @else
-                                            <div class="player-placeholder bg-primary text-white rounded-circle mx-auto d-flex align-items-center justify-content-center" 
-                                                 style="width: 120px; height: 120px; font-size: 2rem;">
-                                                {{ substr($player->name, 0, 1) }}
-                                            </div>
+                                        <div class="player-placeholder bg-primary text-white rounded-circle mx-auto d-flex align-items-center justify-content-center"
+                                            style="width: 120px; height: 120px; font-size: 2rem;">
+                                            {{ substr($player->name, 0, 1) }}
+                                        </div>
                                         @endif
                                     </div>
                                     <h5 class="fw-bold text-primary">{{ $player->name }}</h5>
@@ -1244,7 +1244,7 @@
                 </div>
                 @endforeach
             </div>
-            
+
             <button class="carousel-control-prev" type="button" data-bs-target="#playerCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -1260,7 +1260,7 @@
             <p class="text-muted mt-3">No featured players available</p>
         </div>
         @endif
-        
+
         <div class="text-center mt-5">
             <a href="{{ route('players.index') }}" class="btn btn-primary btn-lg">
                 <i class="bi bi-people me-2"></i>View Full Squad
@@ -1280,12 +1280,12 @@
                         <i class="bi bi-envelope me-2"></i>Stay Connected
                     </h3>
                     <p class="mb-4">Get the latest news, match updates, and exclusive content delivered to your inbox.</p>
-                    
+
                     <form id="newsletterForm" action="{{ route('newsletter.subscribe') }}" method="POST" class="row g-2">
                         @csrf
                         <div class="col-8">
-                            <input type="email" class="form-control form-control-lg" name="email" 
-                                   placeholder="Enter your email" required>
+                            <input type="email" class="form-control form-control-lg" name="email"
+                                placeholder="Enter your email" required>
                         </div>
                         <div class="col-4">
                             <button type="submit" class="btn btn-warning btn-lg w-100 fw-bold">
@@ -1293,13 +1293,13 @@
                             </button>
                         </div>
                     </form>
-                    
+
                     <small class="text-white-50 mt-2 d-block">
                         <i class="bi bi-shield-check me-1"></i>We respect your privacy. Unsubscribe anytime.
                     </small>
                 </div>
             </div>
-            
+
             <!-- Social Media -->
             <div class="col-lg-6">
                 <div class="social-media-section">
@@ -1307,7 +1307,7 @@
                         <i class="bi bi-share me-2"></i>Follow Us
                     </h3>
                     <p class="mb-4">Connect with us on social media for live updates and behind-the-scenes content.</p>
-                    
+
                     <div class="social-icons">
                         <a href="#" class="btn btn-outline-light btn-lg me-3 mb-2" target="_blank">
                             <i class="bi bi-facebook"></i>
@@ -1334,382 +1334,422 @@
 
 <!-- Professional Hero Section JavaScript -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Newsletter subscription form
-    const newsletterForm = document.getElementById('newsletterForm');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const submitButton = this.querySelector('button[type="submit"]');
-            const originalText = submitButton.innerHTML;
-            
-            submitButton.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Subscribing...';
-            submitButton.disabled = true;
-            
-            try {
-                const response = await fetch('{{ route("newsletter.subscribe") }}', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+    document.addEventListener('DOMContentLoaded', function() {
+        // Newsletter subscription form
+        const newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const formData = new FormData(this);
+                const submitButton = this.querySelector('button[type="submit"]');
+                const originalText = submitButton.innerHTML;
+
+                submitButton.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Subscribing...';
+                submitButton.disabled = true;
+
+                try {
+                    const response = await fetch('{{ route("newsletter.subscribe") }}', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                        }
+                    });
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        alert('Thank you for subscribing!');
+                        newsletterForm.reset();
+                    } else {
+                        alert(result.message || 'Subscription failed. Please try again.');
                     }
-                });
-                
-                const result = await response.json();
-                
-                if (result.success) {
-                    alert('Thank you for subscribing!');
-                    newsletterForm.reset();
-                } else {
-                    alert(result.message || 'Subscription failed. Please try again.');
+
+                } catch (error) {
+                    alert('Network error. Please try again later.');
+                } finally {
+                    submitButton.innerHTML = originalText;
+                    submitButton.disabled = false;
                 }
-                
-            } catch (error) {
-                alert('Network error. Please try again later.');
-            } finally {
-                submitButton.innerHTML = originalText;
-                submitButton.disabled = false;
-            }
-        });
-    }
-    
-    // Sponsors carousel auto-scroll
-    const sponsorsTrack = document.querySelector('.sponsors-track');
-    if (sponsorsTrack) {
-        let scrollPosition = 0;
-        const scrollSpeed = 1;
-        
-        function autoScroll() {
-            scrollPosition += scrollSpeed;
-            sponsorsTrack.style.transform = `translateX(-${scrollPosition}px)`;
-            
-            // Reset position when fully scrolled
-            if (scrollPosition >= sponsorsTrack.scrollWidth / 2) {
-                scrollPosition = 0;
-            }
+            });
         }
-        
-        setInterval(autoScroll, 50);
-        
-        // Pause on hover
-        sponsorsTrack.addEventListener('mouseenter', () => clearInterval(autoScroll));
-        sponsorsTrack.addEventListener('mouseleave', () => setInterval(autoScroll, 50));
-    }
-    
-    // CTA Button Hover Effects
-    document.querySelectorAll('.cta-button').forEach(button => {
-        button.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-3px)';
-        });
-        
-        button.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-    
-    // Smooth Scroll for Scroll Indicator
-    const scrollIndicator = document.querySelector('.scroll-indicator');
-    if (scrollIndicator) {
-        scrollIndicator.addEventListener('click', function() {
-            const nextSection = document.querySelector('.sponsors-carousel-section');
-            if (nextSection) {
-                nextSection.scrollIntoView({ behavior: 'smooth' });
+
+        // Sponsors carousel auto-scroll
+        const sponsorsTrack = document.querySelector('.sponsors-track');
+        if (sponsorsTrack) {
+            let scrollPosition = 0;
+            const scrollSpeed = 1;
+
+            function autoScroll() {
+                scrollPosition += scrollSpeed;
+                sponsorsTrack.style.transform = `translateX(-${scrollPosition}px)`;
+
+                // Reset position when fully scrolled
+                if (scrollPosition >= sponsorsTrack.scrollWidth / 2) {
+                    scrollPosition = 0;
+                }
             }
+
+            setInterval(autoScroll, 50);
+
+            // Pause on hover
+            sponsorsTrack.addEventListener('mouseenter', () => clearInterval(autoScroll));
+            sponsorsTrack.addEventListener('mouseleave', () => setInterval(autoScroll, 50));
+        }
+
+        // CTA Button Hover Effects
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+            });
+
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
         });
-    }
-    
-    // Pattern Float Animation
-    const heroPattern = document.querySelector('.hero-pattern');
-    if (heroPattern) {
-        let angle = 0;
-        setInterval(() => {
-            angle += 0.5;
-            heroPattern.style.backgroundPosition = `${Math.sin(angle) * 10}px ${Math.cos(angle) * 10}px`;
-        }, 100);
-    }
-});
+
+        // Smooth Scroll for Scroll Indicator
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        if (scrollIndicator) {
+            scrollIndicator.addEventListener('click', function() {
+                const nextSection = document.querySelector('.sponsors-carousel-section');
+                if (nextSection) {
+                    nextSection.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        }
+
+        // Pattern Float Animation
+        const heroPattern = document.querySelector('.hero-pattern');
+        if (heroPattern) {
+            let angle = 0;
+            setInterval(() => {
+                angle += 0.5;
+                heroPattern.style.backgroundPosition = `${Math.sin(angle) * 10}px ${Math.cos(angle) * 10}px`;
+            }, 100);
+        }
+    });
 </script>
 
 <!-- Professional Hero Section CSS -->
 <style>
-/* Professional Hero Section Styles */
-.hero-section {
-    min-height: 100vh;
-    position: relative;
-}
-
-.hero-background {
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 10;
-}
-
-.club-logo {
-    transition: transform 0.3s ease;
-}
-
-.club-logo:hover {
-    transform: scale(1.1);
-}
-
-.club-name {
-    font-size: 2.5rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-}
-
-.club-subtitle {
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.club-tagline {
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-}
-
-/* Info Cards */
-.info-card {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 0;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-}
-
-.info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.info-card .card-header {
-    background: transparent;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-}
-
-.info-card .card-body {
-    padding: 1.5rem;
-}
-
-.score-display {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--bs-primary);
-}
-
-.score-separator {
-    margin: 0 0.5rem;
-}
-
-/* Stats Panel */
-.stats-panel {
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(15px);
-    border-radius: 20px;
-}
-
-.stat-item {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    transition: all 0.3s ease;
-}
-
-.stat-item:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateX(10px);
-}
-
-.stat-icon {
-    font-size: 2rem;
-    margin-right: 1rem;
-}
-
-.stat-number {
-    font-size: 2rem;
-    font-weight: 800;
-    color: white;
-    margin-bottom: 0;
-}
-
-.stat-label {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
-}
-
-/* CTA Buttons */
-.cta-button {
-    transition: all 0.3s ease;
-    border-radius: 10px;
-    font-weight: 600;
-    position: relative;
-    overflow: hidden;
-}
-
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* Scroll Indicator */
-.scroll-indicator {
-    cursor: pointer;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-    40% { transform: translateY(-10px) translateX(-50%); }
-    60% { transform: translateY(-5px) translateX(-50%); }
-}
-
-/* Sponsors Carousel */
-.sponsors-carousel-section {
-    border-top: 1px solid #e9ecef;
-}
-
-.sponsors-slider {
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.sponsors-track {
-    display: inline-flex;
-    animation: scroll 30s linear infinite;
-}
-
-.sponsor-slide {
-    flex-shrink: 0;
-    transition: all 0.3s ease;
-}
-
-.sponsor-logo:hover {
-    filter: grayscale(0%) !important;
-    opacity: 1 !important;
-    transform: scale(1.1);
-}
-
-.sponsor-placeholder {
-    background: #f8f9fa;
-    border: 2px dashed #dee2e6;
-    border-radius: 8px;
-    padding: 1rem;
-    min-width: 120px;
-    text-align: center;
-}
-
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-@keyframes patternFloat {
-    0%, 100% { background-position: 0 0, 0 0; }
-    50% { background-position: 20px 20px, -20px -20px; }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .club-name {
-        font-size: 1.8rem;
+    /* Remove white space between navbar and hero section */
+    body {
+        margin: 0;
+        padding: 0;
     }
-    
-    .club-subtitle {
-        font-size: 1.5rem;
+
+    main {
+        margin: 0;
+        padding: 0;
     }
-    
+
+    /* Professional Hero Section Styles */
+    .hero-section {
+        min-height: 100vh;
+        position: relative;
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .hero-background {
+        z-index: 1;
+    }
+
     .hero-content {
-        padding: 2rem 1rem;
+        position: relative;
+        z-index: 10;
     }
-    
-    .stats-panel {
-        margin-top: 2rem;
-        padding: 1rem !important;
-    }
-    
-    .stats-container {
-        padding: 1.5rem !important;
-    }
-    
-    .trending-news-card {
-        margin-bottom: 1rem;
-    }
-    
-    .trending-image {
-        height: 150px !important;
-    }
-    
-    .match-info-cards .col-md-6 {
-        margin-bottom: 1rem;
-    }
-    
-    /* Make trending section stack below main content on mobile */
-    .row.g-0.min-vh-100 {
-        flex-direction: column;
-    }
-    
-    .col-lg-8.col-12 {
-        order: 1;
-        min-height: 80vh;
-    }
-    
-    .col-lg-4.col-12 {
-        order: 2;
-        min-height: auto;
-        margin-top: 2rem;
-    }
-}
 
-@media (max-width: 576px) {
-    .hero-cta-section .btn {
-        margin-bottom: 0.5rem;
+    .club-logo {
+        transition: transform 0.3s ease;
     }
-    
+
+    .club-logo:hover {
+        transform: scale(1.1);
+    }
+
+    .club-name {
+        font-size: 2.5rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+    }
+
+    .club-subtitle {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    .club-tagline {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+
+    /* Info Cards */
+    .info-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 0;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-card .card-header {
+        background: transparent;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+    }
+
+    .info-card .card-body {
+        padding: 1.5rem;
+    }
+
+    .score-display {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: var(--bs-primary);
+    }
+
+    .score-separator {
+        margin: 0 0.5rem;
+    }
+
+    /* Stats Panel */
+    .stats-panel {
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+    }
+
     .stat-item {
-        flex-direction: column;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+
+    .stat-item:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateX(10px);
+    }
+
+    .stat-icon {
+        font-size: 2rem;
+        margin-right: 1rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 0;
+    }
+
+    .stat-label {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.9rem;
+    }
+
+    /* CTA Buttons */
+    .cta-button {
+        transition: all 0.3s ease;
+        border-radius: 10px;
+        font-weight: 600;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Scroll Indicator */
+    .scroll-indicator {
+        cursor: pointer;
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: translateY(0) translateX(-50%);
+        }
+
+        40% {
+            transform: translateY(-10px) translateX(-50%);
+        }
+
+        60% {
+            transform: translateY(-5px) translateX(-50%);
+        }
+    }
+
+    /* Sponsors Carousel */
+    .sponsors-carousel-section {
+        border-top: 1px solid #e9ecef;
+    }
+
+    .sponsors-slider {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .sponsors-track {
+        display: inline-flex;
+        animation: scroll 30s linear infinite;
+    }
+
+    .sponsor-slide {
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+    }
+
+    .sponsor-logo:hover {
+        filter: grayscale(0%) !important;
+        opacity: 1 !important;
+        transform: scale(1.1);
+    }
+
+    .sponsor-placeholder {
+        background: #f8f9fa;
+        border: 2px dashed #dee2e6;
+        border-radius: 8px;
+        padding: 1rem;
+        min-width: 120px;
         text-align: center;
     }
-    
-    .stat-icon {
-        margin-right: 0;
-        margin-bottom: 0.5rem;
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
     }
-    
-    .stats-panel {
-        padding: 0.75rem !important;
+
+    @keyframes patternFloat {
+
+        0%,
+        100% {
+            background-position: 0 0, 0 0;
+        }
+
+        50% {
+            background-position: 20px 20px, -20px -20px;
+        }
     }
-    
-    .stats-container {
-        padding: 1rem !important;
-        border-radius: 15px !important;
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .club-name {
+            font-size: 1.8rem;
+        }
+
+        .club-subtitle {
+            font-size: 1.5rem;
+        }
+
+        .hero-content {
+            padding: 2rem 1rem;
+        }
+
+        .stats-panel {
+            margin-top: 2rem;
+            padding: 1rem !important;
+        }
+
+        .stats-container {
+            padding: 1.5rem !important;
+        }
+
+        .trending-news-card {
+            margin-bottom: 1rem;
+        }
+
+        .trending-image {
+            height: 150px !important;
+        }
+
+        .match-info-cards .col-md-6 {
+            margin-bottom: 1rem;
+        }
+
+        /* Make trending section stack below main content on mobile */
+        .row.g-0.min-vh-100 {
+            flex-direction: column;
+        }
+
+        .col-lg-8.col-12 {
+            order: 1;
+            min-height: 80vh;
+        }
+
+        .col-lg-4.col-12 {
+            order: 2;
+            min-height: auto;
+            margin-top: 2rem;
+        }
     }
-    
-    .trending-news-card {
-        border-radius: 15px !important;
+
+    @media (max-width: 576px) {
+        .hero-cta-section .btn {
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .stat-icon {
+            margin-right: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .stats-panel {
+            padding: 0.75rem !important;
+        }
+
+        .stats-container {
+            padding: 1rem !important;
+            border-radius: 15px !important;
+        }
+
+        .trending-news-card {
+            border-radius: 15px !important;
+        }
+
+        .trending-image {
+            height: 120px !important;
+        }
+
+        .trending-icon {
+            width: 40px !important;
+            height: 40px !important;
+        }
+
+        .trending-icon i {
+            font-size: 1.2rem !important;
+        }
     }
-    
-    .trending-image {
-        height: 120px !important;
-    }
-    
-    .trending-icon {
-        width: 40px !important;
-        height: 40px !important;
-    }
-    
-    .trending-icon i {
-        font-size: 1.2rem !important;
-    }
-}
 </style>
 @endsection

@@ -24,18 +24,18 @@ class FixtureController extends Controller
         $request->validate([
             'opponent' => 'required|string|max:255',
             'match_date' => 'required|date',
-            'location' => 'required|string|max:255',
+            'venue' => 'required|in:Home,Away,Neutral',
+            'location' => 'nullable|string|max:255',
             'competition' => 'required|string|max:255',
-            'is_home' => 'boolean',
-            'ticket_price' => 'nullable|numeric|min:0',
-            'description' => 'nullable|string',
-            'status' => 'required|in:scheduled,live,completed,postponed,cancelled',
+            'match_type' => 'nullable|string|max:255',
+            'season' => 'nullable|integer|min:2020|max:2030',
+            'matchday' => 'nullable|integer|min:1|max:50',
+            'preview' => 'nullable|string',
+            'is_completed' => 'boolean',
         ]);
 
         $data = $request->all();
-        
-        // Set venue based on is_home
-        $data['venue'] = $request->is_home ? 'Home' : 'Away';
+        $data['is_completed'] = $request->has('is_completed');
 
         Fixture::create($data);
 
@@ -57,18 +57,18 @@ class FixtureController extends Controller
         $request->validate([
             'opponent' => 'required|string|max:255',
             'match_date' => 'required|date',
-            'location' => 'required|string|max:255',
+            'venue' => 'required|in:Home,Away,Neutral',
+            'location' => 'nullable|string|max:255',
             'competition' => 'required|string|max:255',
-            'is_home' => 'boolean',
-            'ticket_price' => 'nullable|numeric|min:0',
-            'description' => 'nullable|string',
-            'status' => 'required|in:scheduled,live,completed,postponed,cancelled',
+            'match_type' => 'nullable|string|max:255',
+            'season' => 'nullable|integer|min:2020|max:2030',
+            'matchday' => 'nullable|integer|min:1|max:50',
+            'preview' => 'nullable|string',
+            'is_completed' => 'boolean',
         ]);
 
         $data = $request->all();
-        
-        // Set venue based on is_home
-        $data['venue'] = $request->is_home ? 'Home' : 'Away';
+        $data['is_completed'] = $request->has('is_completed');
 
         $fixture->update($data);
 

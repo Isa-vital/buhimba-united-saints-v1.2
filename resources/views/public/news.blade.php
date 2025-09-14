@@ -4,6 +4,8 @@
 @section('description', 'Latest news, updates, and announcements from Buhimba United Saints FC. Stay informed about team news, transfers, and match reports.')
 
 @section('content')
+<link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+<script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- Enhanced Page Header with Breadcrumbs -->
 <section class="news-hero position-relative overflow-hidden">
     <!-- Background with gradient overlay -->

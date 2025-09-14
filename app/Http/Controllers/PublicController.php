@@ -20,6 +20,7 @@ class PublicController extends Controller
     {
         // Get next fixture
         $nextFixture = Fixture::where('match_date', '>', now())
+            ->where('is_completed', false)
             ->orderBy('match_date')
             ->first();
 
@@ -104,59 +105,74 @@ class PublicController extends Controller
 
     public function fixtures()
     {
-        $fixtures = Fixture::where('match_date', '>', now())
+        // Get upcoming fixtures (not completed and in the future)
+        $upcomingFixtures = Fixture::where('match_date', '>', now())
+            ->where('is_completed', false)
             ->orderBy('match_date')
-            ->paginate(10);
-        
-        $nextFixture = $fixtures->first();
+            ->get();
 
-        return view('public.fixtures', compact('fixtures', 'nextFixture'));
+        // Get recent fixtures (completed or in the past)
+        $recentFixtures = Fixture::where(function ($query) {
+            $query->where('match_date', '<=', now())
+                ->orWhere('is_completed', true);
+        })
+            ->orderBy('match_date', 'desc')
+            ->limit(5)
+            ->get();
+
+        $nextFixture = $upcomingFixtures->first();
+
+        return view('public.fixtures', compact('upcomingFixtures', 'recentFixtures', 'nextFixture'));
     }
 
     public function results()
     {
         $results = MatchResult::orderBy('match_date', 'desc')
             ->paginate(10);
-        
+
         $lastResult = $results->first();
-        
-        // Calculate season stats
-        $buhimbaResults = MatchResult::where(function($query) {
-                $query->where('home_team', 'Buhimba United Saints FC')
-                      ->orWhere('away_team', 'Buhimba United Saints FC');
-            })
-            ->get();
-            
+
+        // Calculate season stats for Buhimba United Saints FC
+        $buhimbaResults = MatchResult::all();
+
         $seasonStats = [
             'matches' => $buhimbaResults->count(),
-            'wins' => $buhimbaResults->filter(function($match) {
-                return ($match->home_team == 'Buhimba United Saints FC' && $match->home_goals > $match->away_goals) ||
-                       ($match->away_team == 'Buhimba United Saints FC' && $match->away_goals > $match->home_goals);
+            'wins' => $buhimbaResults->filter(function ($match) {
+                if ($match->is_home) {
+                    return $match->home_score > $match->away_score;
+                } else {
+                    return $match->away_score > $match->home_score;
+                }
             })->count(),
-            'draws' => $buhimbaResults->filter(function($match) {
-                return $match->home_goals == $match->away_goals;
+            'draws' => $buhimbaResults->filter(function ($match) {
+                return $match->home_score == $match->away_score;
             })->count(),
-            'losses' => $buhimbaResults->filter(function($match) {
-                return ($match->home_team == 'Buhimba United Saints FC' && $match->home_goals < $match->away_goals) ||
-                       ($match->away_team == 'Buhimba United Saints FC' && $match->away_goals < $match->home_goals);
+            'losses' => $buhimbaResults->filter(function ($match) {
+                if ($match->is_home) {
+                    return $match->home_score < $match->away_score;
+                } else {
+                    return $match->away_score < $match->home_score;
+                }
             })->count(),
-            'goals_for' => $buhimbaResults->sum(function($match) {
-                return $match->home_team == 'Buhimba United Saints FC' ? $match->home_goals : $match->away_goals;
+            'goals_for' => $buhimbaResults->sum(function ($match) {
+                return $match->is_home ? $match->home_score : $match->away_score;
             }),
-            'goals_against' => $buhimbaResults->sum(function($match) {
-                return $match->home_team == 'Buhimba United Saints FC' ? $match->away_goals : $match->home_goals;
+            'goals_against' => $buhimbaResults->sum(function ($match) {
+                return $match->is_home ? $match->away_score : $match->home_score;
             }),
         ];
-        
+
         $seasonStats['goal_difference'] = $seasonStats['goals_for'] - $seasonStats['goals_against'];
-        
+
         // Recent form (last 5 matches)
-        $recentForm = $buhimbaResults->take(5)->map(function($match) {
-            if ($match->home_goals == $match->away_goals) return 'D';
-            $isHome = $match->home_team == 'Buhimba United Saints FC';
-            $won = ($isHome && $match->home_goals > $match->away_goals) || 
-                   (!$isHome && $match->away_goals > $match->home_goals);
-            return $won ? 'W' : 'L';
+        $recentForm = $buhimbaResults->sortByDesc('match_date')->take(5)->map(function ($match) {
+            if ($match->home_score == $match->away_score) return 'D';
+
+            if ($match->is_home) {
+                return $match->home_score > $match->away_score ? 'W' : 'L';
+            } else {
+                return $match->away_score > $match->home_score ? 'W' : 'L';
+            }
         })->toArray();
 
         return view('public.results', compact('results', 'lastResult', 'seasonStats', 'recentForm'));
@@ -182,23 +198,23 @@ class PublicController extends Controller
         }
 
         if ($request->filled('search')) {
-            $query->where(function($q) use ($request) {
+            $query->where(function ($q) use ($request) {
                 $q->where('title', 'like', '%' . $request->search . '%')
-                  ->orWhere('excerpt', 'like', '%' . $request->search . '%')
-                  ->orWhere('content', 'like', '%' . $request->search . '%');
+                    ->orWhere('excerpt', 'like', '%' . $request->search . '%')
+                    ->orWhere('content', 'like', '%' . $request->search . '%');
             });
         }
 
         $news = $query->orderBy('published_at', 'desc')->paginate(9);
-        
+
         $featuredNews = News::where('is_published', true)
             ->where('is_featured', true)
             ->with('author')
             ->latest('published_at')
             ->first();
-            
+
         $latestNews = $news->first();
-        
+
         $categories = News::where('is_published', true)
             ->distinct()
             ->pluck('category')
@@ -222,7 +238,7 @@ class PublicController extends Controller
             ->where('published_at', '<', $news->published_at)
             ->orderBy('published_at', 'desc')
             ->first();
-            
+
         $nextNews = News::where('is_published', true)
             ->where('published_at', '>', $news->published_at)
             ->orderBy('published_at', 'asc')
@@ -270,7 +286,7 @@ class PublicController extends Controller
 
         // Here you would typically send an email or store in database
         // For now, just return success message
-        
+
         return back()->with('success', 'Thank you for your message! We will get back to you soon.');
     }
 
@@ -311,7 +327,6 @@ class PublicController extends Controller
                 'success' => true,
                 'message' => 'Successfully subscribed to our newsletter! Welcome to the Saints family! 🟢⚪'
             ]);
-
         } catch (\Exception $e) {
             return response()->json([
                 'success' => false,
@@ -323,9 +338,9 @@ class PublicController extends Controller
     public function unsubscribeNewsletter(Request $request)
     {
         $email = $request->email;
-        
+
         $subscriber = NewsletterSubscriber::where('email', $email)->first();
-        
+
         if ($subscriber) {
             $subscriber->unsubscribe();
             return response()->json([
