@@ -38,13 +38,13 @@ class PublicController extends Controller
 
         // Get sponsors
         $sponsors = Sponsor::where('is_active', true)
-            ->orderBy('tier')
+            ->orderBy('sort_order')
             ->orderBy('name')
             ->get();
 
-        // Get key players for homepage
+        // Get key players for homepage (top performers)
         $keyPlayers = Player::active()
-            ->where('is_featured', true)
+            ->orderBy('goals', 'desc')
             ->orderBy('shirt_number')
             ->limit(4)
             ->get();
